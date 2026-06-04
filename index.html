@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Slete</title>
+
+<link rel="stylesheet" href="slete-desktop.css">
+<link rel="stylesheet" href="slete.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- =========================================
+     APP
+========================================= -->
+
+<div class="app-shell">
+
+    <!-- =====================================
+         NAVBAR
+    ====================================== -->
+
+    <header class="navbar">
+
+        <div class="nav-left">
+
+            <div class="logo">
+                SL<span>Ξ</span>TE
+            </div>
+
+            <nav class="nav-menu">
+
+                <a href="#" class="active">
+                    Pools
+                </a>
+
+                <a href="#">
+                    Labs
+                </a>
+
+                <a href="#">
+                    Leaderboard
+                </a>
+
+                <a href="#">
+                    Portfolio
+                </a>
+
+            </nav>
+
+        </div>
+
+        <div class="nav-right">
+
+            <button class="wallet-btn btn-connect">
+    Connect
+</button>
+
+        </div>
+
+    </header>
+
+    <!-- =====================================
+         PAGE HEADER
+    ====================================== -->
+
+    <section class="page-header">
+
+        <div>
+
+            <h1>
+                Pools
+            </h1>
+
+            <p>
+                Predict where markets close.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- =====================================
+         FILTERS
+    ====================================== -->
+
+    <section class="filters">
+
+        <button class="filter-chip active">
+            All
+        </button>
+
+        <button class="filter-chip">
+            Open
+        </button>
+
+        <button class="filter-chip">
+            Snapshotting
+        </button>
+
+        <button class="filter-chip">
+            Closed
+        </button>
+
+        <button class="filter-chip">
+            Claimable
+        </button>
+
+    </section>
+
+    <!-- =====================================
+         PROTOCOL METRICS
+    ====================================== -->
+
+    <section class="metrics-grid">
+
+        <div class="metric-card">
+            <span>Total Prize Pools</span>
+            <strong data-metric="124000" data-suffix=" USDC">124,000 USDC</strong>
+        </div>
+
+        <div class="metric-card">
+            <span>Active Predictors</span>
+            <strong data-metric="4291">4,291</strong>
+        </div>
+
+        <div class="metric-card">
+            <span>Predictions Made</span>
+            <strong data-metric="32114">32,114</strong>
+        </div>
+
+        <div class="metric-card">
+            <span>Markets</span>
+            <strong data-metric="14">14</strong>
+        </div>
+
+    </section>
+
+    <!-- =====================================
+         POOLS GRID
+    ====================================== -->
+
+    <section class="pools-grid">
+
+        <article class="pool-card" data-pool="942">
+
+            <div class="pool-top">
+                <div class="pool-status open">Open</div>
+                <div class="pool-duration">24H</div>
+            </div>
+
+            <div class="pool-id">#942</div>
+
+            <div class="asset">SUI / USDC</div>
+
+            <div class="live-price" data-price="4.284">$4.284</div>
+            <div class="price-change positive">+0.12%</div>
+
+            <div class="countdown">
+                Closes In
+                <strong data-countdown="28323">07:52:03</strong>
+            </div>
+
+            <div class="pool-stats">
+                <div>
+                    <span>Prize Pool</span>
+                    <strong>1,240 USDC</strong>
+                </div>
+                <div>
+                    <span>Predictors</span>
+                    <strong>421</strong>
+                </div>
+                <div>
+                    <span>Entry</span>
+                    <strong>1 USDC</strong>
+                </div>
+            </div>
+
+            <button class="join-btn">Predict →</button>
+
+        </article>
+
+        <article class="pool-card" data-pool="943">
+
+            <div class="pool-top">
+                <div class="pool-status open">Open</div>
+                <div class="pool-duration">6H</div>
+            </div>
+
+            <div class="pool-id">#943</div>
+
+            <div class="asset">ETH / USDC</div>
+
+            <div class="live-price" data-price="4102">$4,102</div>
+            <div class="price-change positive">+1.84%</div>
+
+            <div class="countdown">
+                Closes In
+                <strong data-countdown="20477">05:41:17</strong>
+            </div>
+
+            <div class="pool-stats">
+                <div>
+                    <span>Prize Pool</span>
+                    <strong>3,410 USDC</strong>
+                </div>
+                <div>
+                    <span>Predictors</span>
+                    <strong>812</strong>
+                </div>
+                <div>
+                    <span>Entry</span>
+                    <strong>2 USDC</strong>
+                </div>
+            </div>
+
+            <button class="join-btn">Predict →</button>
+
+        </article>
+
+        <article class="pool-card" data-pool="944">
+
+            <div class="pool-top">
+                <div class="pool-status open">Open</div>
+                <div class="pool-duration">24H</div>
+            </div>
+
+            <div class="pool-id">#944</div>
+
+            <div class="asset">SOL / USDC</div>
+
+            <div class="live-price" data-price="212">$212</div>
+            <div class="price-change negative">−0.43%</div>
+
+            <div class="countdown">
+                Closes In
+                <strong data-countdown="40364">11:12:44</strong>
+            </div>
+
+            <div class="pool-stats">
+                <div>
+                    <span>Prize Pool</span>
+                    <strong>2,820 USDC</strong>
+                </div>
+                <div>
+                    <span>Predictors</span>
+                    <strong>537</strong>
+                </div>
+                <div>
+                    <span>Entry</span>
+                    <strong>1 USDC</strong>
+                </div>
+            </div>
+
+            <button class="join-btn">Predict →</button>
+
+        </article>
+
+    </section>
+
+    <!-- =====================================
+         MOBILE BOTTOM NAV
+    ====================================== -->
+
+    <nav class="mobile-nav">
+
+        <button class="mobile-nav-item active" data-nav="pools">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            Pools
+        </button>
+
+        <button class="mobile-nav-item" data-nav="labs">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
+            Labs
+        </button>
+
+        <button class="mobile-nav-item" data-nav="leaderboard">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Leaders
+        </button>
+
+        <button class="mobile-nav-item" data-nav="portfolio">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Portfolio
+        </button>
+
+    </nav>
+
+   <!-- =====================================
+         POOL DETAIL PAGE
+    ====================================== -->
+
+    <section class="detail-page" id="page-pool-detail">
+
+        <!-- DETAIL NAVBAR -->
+        <header class="detail-nav">
+            <button class="detail-back" id="detailBack">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="detail-breadcrumb">
+                <span class="detail-bc-pools">Pools</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                <span class="detail-bc-asset" id="detailBcAsset">SUI / USDC</span>
+            </div>
+            <div class="detail-nav-right">
+                <div class="detail-status-badge">Open</div>
+                <div class="detail-duration-badge" id="detailDuration">24H</div>
+            </div>
+        </header>
+
+        <!-- PRICE HERO -->
+        <div class="detail-price-hero">
+            <div class="detail-price-left">
+                <div class="detail-asset-name" id="detailAsset">SUI / USDC</div>
+                <div class="detail-price-row">
+                    <span class="detail-live-price" id="detailLivePrice">$4.284</span>
+                    <span class="detail-change" id="detailChange">+0.12%</span>
+                </div>
+            </div>
+            <div class="detail-pool-id-badge" id="detailPoolId">#942</div>
+        </div>
+
+        <!-- TRADINGVIEW CHART -->
+        <div class="detail-chart-wrap">
+            <div class="tradingview-widget-container" id="tvChartContainer">
+                <div id="tradingview_chart"></div>
+            </div>
+        </div>
+
+        <!-- DUAL TIMERS -->
+        <div class="detail-timers">
+        <div class="detail-timer-card detail-timer-close">
+    <div class="detail-timer-label">Pool Closes In</div>
+    <div class="detail-timer-value" id="detailTimerClose">—</div>
+    <div class="detail-timer-tag">Entry deadline</div>
+</div>
+<div class="detail-timer-card detail-timer-snapshot">
+    <div class="detail-timer-label">Snapshot In</div>
+    <div class="detail-timer-value" id="detailTimerSnapshot">—</div>
+    <div class="detail-timer-tag">Oracle reads price</div>
+</div>
+        </div>
+
+        <!-- POOL METADATA STRIP -->
+        <div class="detail-meta-strip">
+            <div class="detail-meta-item">
+                <span>Pool ID</span>
+                <strong id="detailMetaPool">942</strong>
+            </div>
+            <div class="detail-meta-item">
+                <span>Entry Fee</span>
+                <strong id="detailMetaEntry">1 USDC</strong>
+            </div>
+            <div class="detail-meta-item">
+                <span>Predictors</span>
+                <strong id="detailMetaPredictors">421</strong>
+            </div>
+            <div class="detail-meta-item">
+                <span>Prize Pool</span>
+                <strong id="detailMetaPrize">1,240 USDC</strong>
+            </div>
+        </div>
+
+        <!-- PREDICTION DISTRIBUTION -->
+        <div class="detail-distribution">
+            <div class="detail-dist-header">
+                <span class="detail-dist-title">Prediction Distribution</span>
+                <span class="detail-dist-sub" id="detailDistSub">421 predictions</span>
+            </div>
+            <div class="detail-dist-bars" id="detailDistBars"></div>
+            <div class="detail-dist-range">
+                <span id="detailDistMin">—</span>
+                <span>Current Price</span>
+                <span id="detailDistMax">—</span>
+            </div>
+        </div>
+
+        <!-- PREDICT INPUT -->
+        <div class="detail-predict-section">
+            <div class="detail-predict-label">Your Predicted Close Price</div>
+            <div class="detail-input-wrap">
+                <span class="detail-input-prefix">$</span>
+                <input
+                    type="number"
+                    class="detail-input"
+                    id="detailPredictionInput"
+                    placeholder="0.000"
+                    step="0.001"
+                />
+                <button class="detail-input-hint" id="detailUseCurrentBtn">Use current</button>
+            </div>
+            <button class="detail-submit-btn" id="detailSubmit">
+                Confirm Prediction →
+            </button>
+            <p class="detail-disclaimer">
+    Closest prediction to the oracle close price wins the prize pool.
+</p>
+        </div>
+
+    </section>
+
+</div>
+
+<script src="sui-wallet.js"></script>
+<script src="slete.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,526 @@
+/* =========================================================
+   SLETE DESKTOP
+   Precision Markets on Sui
+========================================================= */
+
+:root {
+
+    --bg: #ffffff;
+
+    --surface: #f8fafc;
+    --surface-2: #f1f5f9;
+
+    --border: #e2e8f0;
+
+    --text: #0f172a;
+    --text-soft: #64748b;
+
+    --blue: #2563eb;
+    --blue-hover: #1d4ed8;
+
+    --green: #16a34a;
+
+    --radius: 20px;
+
+    --container: 1280px;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    font-family: 'Inter', sans-serif;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    position: relative;
+}
+
+/* =========================================================
+   GRID BACKGROUND
+========================================================= */
+
+.grid-background {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -1;
+
+    background:
+        linear-gradient(
+            rgba(37,99,235,.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(37,99,235,.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 42px 42px;
+
+    pointer-events: none;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+
+    max-width: var(--container);
+
+    margin: 0 auto;
+
+    height: 82px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 24px;
+
+    border-bottom: 1px solid rgba(226,232,240,.7);
+
+    backdrop-filter: blur(12px);
+}
+
+.nav-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 60px;
+}
+
+.logo {
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    cursor: pointer;
+}
+
+.logo span {
+
+    color: var(--blue);
+}
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 34px;
+}
+
+.nav-links a {
+
+    text-decoration: none;
+
+    color: var(--text-soft);
+
+    font-weight: 500;
+
+    transition: .2s ease;
+}
+
+.nav-links a:hover {
+
+    color: var(--text);
+}
+
+.wallet-btn {
+
+    border: none;
+
+    background: var(--blue);
+
+    color: white;
+
+    height: 46px;
+
+    padding: 0 22px;
+
+    border-radius: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.wallet-btn:hover {
+
+    background: var(--blue-hover);
+
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main {
+
+    max-width: var(--container);
+
+    margin: 0 auto;
+
+    padding: 40px 24px 100px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    display: grid;
+
+    grid-template-columns: 1.3fr .8fr;
+
+    gap: 60px;
+
+    align-items: center;
+
+    margin-top: 40px;
+
+    margin-bottom: 80px;
+}
+
+.hero-badge {
+
+    width: fit-content;
+
+    background: #eff6ff;
+
+    color: var(--blue);
+
+    padding: 10px 16px;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+
+    font-size: 72px;
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 24px;
+}
+
+.hero p {
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    color: var(--text-soft);
+
+    max-width: 700px;
+
+    margin-bottom: 30px;
+}
+
+.primary-btn {
+
+    border: none;
+
+    background: var(--blue);
+
+    color: white;
+
+    height: 56px;
+
+    padding: 0 30px;
+
+    border-radius: 16px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.primary-btn:hover {
+
+    transform: translateY(-2px);
+
+    background: var(--blue-hover);
+}
+
+/* =========================================================
+   LIVE MARKET CARD
+========================================================= */
+
+.hero-market-card {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 28px;
+
+    padding: 32px;
+
+    box-shadow:
+        0 20px 40px rgba(15,23,42,.04);
+}
+
+.market-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 28px;
+
+    font-weight: 600;
+}
+
+.positive {
+
+    color: var(--green);
+}
+
+.market-price {
+
+    font-size: 58px;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 36px;
+}
+
+.market-stats {
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.market-stats div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.market-stats span {
+
+    color: var(--text-soft);
+
+    font-size: 14px;
+}
+
+/* =========================================================
+   TICKER
+========================================================= */
+
+.ticker-section {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 70px;
+}
+
+.ticker-card {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 24px;
+}
+
+.ticker-card h4 {
+
+    margin-bottom: 10px;
+
+    color: var(--text-soft);
+
+    font-weight: 500;
+}
+
+.ticker-card span {
+
+    font-size: 28px;
+
+    font-weight: 700;
+}
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.section-header {
+
+    margin-bottom: 26px;
+}
+
+.section-header h2 {
+
+    font-size: 34px;
+
+    margin-bottom: 8px;
+}
+
+.section-header p {
+
+    color: var(--text-soft);
+}
+
+/* =========================================================
+   POOLS
+========================================================= */
+
+.pools-section {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.pool-row {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    padding: 24px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.4fr
+        1fr
+        1fr
+        1fr
+        1fr
+        1fr
+        auto;
+
+    align-items: center;
+
+    gap: 20px;
+
+    transition: .2s ease;
+}
+
+.pool-row:hover {
+
+    border-color: rgba(37,99,235,.35);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 16px 32px rgba(37,99,235,.08);
+}
+
+.pool-asset {
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+.pool-data {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.pool-data span {
+
+    color: var(--text-soft);
+
+    font-size: 13px;
+}
+
+.pool-data strong {
+
+    font-size: 15px;
+}
+
+.predict-btn {
+
+    border: none;
+
+    background: #eff6ff;
+
+    color: var(--blue);
+
+    padding: 14px 22px;
+
+    border-radius: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.predict-btn:hover {
+
+    background: var(--blue);
+
+    color: white;
+}
