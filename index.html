@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Slete</title>
+
+<link rel="stylesheet" href="slete-desktop.css">
+<link rel="stylesheet" href="slete.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <!-- SIDEBAR OVERLAY -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- COMMAND DRAWER -->
+<aside class="sidebar" id="sidebar">
+
+    <!-- TOP — Identity -->
+    <div class="sidebar-identity">
+        <div class="sidebar-logo">SL<span>Ξ</span>TE</div>
+        <div class="sidebar-wallet-state" id="sidebarWalletState">
+            <div class="sidebar-wallet-dot disconnected" id="sidebarWalletDot"></div>
+            <span id="sidebarWalletLabel">Not connected</span>
+        </div>
+    </div>
+
+    <!-- MIDDLE — Navigation -->
+    <nav class="sidebar-nav">
+        <button class="sidebar-nav-item active" data-sidebar-nav="pools">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <span>Pools</span>
+            <div class="sidebar-nav-badge open-badge">3 Open</div>
+        </button>
+        <button class="sidebar-nav-item" data-sidebar-nav="leaderboard">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <span>Leaderboard</span>
+        </button>
+        <button class="sidebar-nav-item" data-sidebar-nav="portfolio">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Portfolio</span>
+        </button>
+        <div class="sidebar-divider"></div>
+        <button class="sidebar-nav-item" data-sidebar-nav="labs">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
+            <span>Labs</span>
+            <div class="sidebar-nav-tag">Soon</div>
+        </button>
+    </nav>
+
+    <!-- BOTTOM — CTA -->
+    <div class="sidebar-footer">
+        <div class="sidebar-protocol-info">
+            <span class="sidebar-protocol-label">Powered by</span>
+            <span class="sidebar-protocol-value">DeepBook · Sui</span>
+        </div>
+        <button class="sidebar-propose-btn" data-sidebar-nav="propose">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Propose Market
+        </button>
+    </div>
+
+</aside>
+
+<!-- =========================================
+     APP
+========================================= -->
+
+<div class="app-shell">
+
+    <!-- =====================================
+         NAVBAR
+    ====================================== -->
+
+    <header class="navbar">
+
+        <div class="nav-left">
+
+            <div class="logo">
+                SL<span>Ξ</span>TE
+            </div>
+
+            <nav class="nav-menu">
+
+                <a href="#" class="active">
+                    Pools
+                </a>
+
+                <a href="#">
+                    Labs
+                </a>
+
+                <a href="#">
+                    Leaderboard
+                </a>
+
+                <a href="#">
+                    Portfolio
+                </a>
+
+            </nav>
+
+        </div>
+
+<div class="nav-right">
+    <button data-theme class="theme-toggle">☀</button>
+    <button class="wallet-btn" id="walletBtn">Connect</button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</div>
+
+    </header>
+
+    <!-- =====================================
+         PAGE HEADER
+    ====================================== -->
+     <!-- POOLS PAGE -->
+                   <div id="page-pools">
+    <section class="page-header">
+
+        <div>
+
+            <h1>
+                Pools
+            </h1>
+
+            <p>
+                Predict where markets close.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- =====================================
+         FILTERS
+    ====================================== -->
+
+    <section class="filters">
+
+        <button class="filter-chip active">
+            All
+        </button>
+
+        <button class="filter-chip">
+            Open
+        </button>
+
+        <button class="filter-chip">
+            Snapshotting
+        </button>
+
+        <button class="filter-chip">
+            Closed
+        </button>
+
+        <button class="filter-chip">
+            Claimable
+        </button>
+
+    </section>
+
+    <!-- =====================================
+         PROTOCOL METRICS
+    ====================================== -->
+
+    <section class="metrics-grid">
+
+        <div class="metric-card">
+            <span>Total Pooled USDC</span>
+            <strong data-metric="124000" data-suffix=" USDC">124,000 USDC</strong>
+        </div>
+
+        <div class="metric-card">
+            <span>Active Predictors</span>
+            <strong data-metric="4291">4,291</strong>
+        </div>
+
+        <div class="metric-card">
+            <span>Predictions Made</span>
+            <strong data-metric="32114">32,114</strong>
+        </div>
+
+        <div class="metric-card">
+            <span>Markets</span>
+            <strong data-metric="14">14</strong>
+        </div>
+
+    </section>
+
+    <!-- =====================================
+         POOLS GRID
+    ====================================== -->
+
+    <section class="pools-grid" id="active-pools-grid">
+
+    </section>
+
+    <!-- CLOSED MARKETS — populated dynamically by initOracleData -->
+    <section class="pools-grid" id="closed-pools-grid" style="display:none;"></section>
+
+    </div><!-- end #page-pools -->
+    
+    <!-- PORTFOLIO PAGE -->
+<div id="page-portfolio" style="display:none;">
+
+    <section class="page-header">
+        <div>
+            <h1>Portfolio</h1>
+            <p>Your prediction history.</p>
+        </div>
+    </section>
+
+    <!-- DISCONNECTED STATE -->
+    <div class="portfolio-connect-gate" id="portfolioGate">
+        <div class="portfolio-gate-inner">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--text-muted);margin-bottom:16px"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <p class="portfolio-gate-text">Connect your wallet to view your prediction history</p>
+            <button class="detail-gate-btn" id="portfolioConnectBtn">Connect Wallet →</button>
+        </div>
+    </div>
+
+    <!-- CONNECTED STATE -->
+    <div class="portfolio-content" id="portfolioContent" style="display:none;">
+
+        <!-- STATS BAR -->
+        <div class="portfolio-stats">
+            <div class="portfolio-stat">
+                <span>Predictions</span>
+                <strong id="portStatTotal">0</strong>
+            </div>
+            <div class="portfolio-stat">
+                <span>Win Rate</span>
+                <strong id="portStatWinRate">—</strong>
+            </div>
+            <div class="portfolio-stat">
+                <span>Total Earned</span>
+                <strong id="portStatEarned">0 USDC</strong>
+            </div>
+        </div>
+
+        <!-- EMPTY STATE -->
+        <div class="portfolio-empty" id="portfolioEmpty">
+            <p>No predictions yet.</p>
+            <button class="detail-gate-btn" id="portfolioGoPoolsBtn">Browse Pools →</button>
+        </div>
+
+        <!-- HISTORY LIST -->
+        <div class="portfolio-history" id="portfolioHistory" style="display:none;">
+            <div class="portfolio-history-header">
+                <span>Pool</span>
+                <span>Your Prediction</span>
+                <span>Status</span>
+            </div>
+            <div id="portfolioHistoryRows"></div>
+        </div>
+
+    </div>
+
+</div><!-- end #page-portfolio -->
+
+<!-- PROPOSE MARKET PAGE -->
+<div id="page-propose" style="display:none;">
+
+    <section class="page-header">
+        <div>
+            <h1>Propose Market</h1>
+            <p>Create a new prediction pool on DeepBook.</p>
+        </div>
+    </section>
+
+    <!-- STEP INDICATOR -->
+    <div class="propose-steps">
+        <div class="propose-step active" data-step="1">
+            <div class="propose-step-num">1</div>
+            <span>Asset Pair</span>
+        </div>
+        <div class="propose-step-line"></div>
+        <div class="propose-step" data-step="2">
+            <div class="propose-step-num">2</div>
+            <span>Configure</span>
+        </div>
+        <div class="propose-step-line"></div>
+        <div class="propose-step" data-step="3">
+            <div class="propose-step-num">3</div>
+            <span>Review</span>
+        </div>
+    </div>
+
+    <!-- STEP 1 — Asset Pair -->
+    <div class="propose-panel" id="proposeStep1">
+        <h2 class="propose-panel-title">Choose an asset pair</h2>
+        <p class="propose-panel-sub">Select the base asset. All pools are quoted in USDC.</p>
+        <div class="propose-asset-grid">
+            <button class="propose-asset-chip active" data-asset="SUI">
+                <img src="https://assets.coingecko.com/coins/images/26375/small/sui-ocean-square.png" alt="SUI">
+                <span>SUI</span>
+            </button>
+            <button class="propose-asset-chip" data-asset="ETH">
+                <img src="https://assets.coingecko.com/coins/images/279/small/ethereum.png" alt="ETH">
+                <span>ETH</span>
+            </button>
+            <button class="propose-asset-chip" data-asset="SOL">
+                <img src="https://assets.coingecko.com/coins/images/4128/small/solana.png" alt="SOL">
+                <span>SOL</span>
+            </button>
+            <button class="propose-asset-chip" data-asset="BTC">
+                <img src="https://assets.coingecko.com/coins/images/1/small/bitcoin.png" alt="BTC">
+                <span>BTC</span>
+            </button>
+        </div>
+        <div class="propose-selected-pair">
+            <span id="proposeSelectedPair">SUI / USDC</span>
+        </div>
+        <button class="propose-next-btn" id="proposeNext1">Continue →</button>
+    </div>
+
+    <!-- STEP 2 — Configure -->
+    <div class="propose-panel" id="proposeStep2" style="display:none;">
+        <h2 class="propose-panel-title">Configure your pool</h2>
+        <p class="propose-panel-sub">Set the duration and entry fee for predictors.</p>
+
+        <div class="propose-field">
+            <label class="propose-label">Pool Duration</label>
+            <div class="propose-option-row">
+                <button class="propose-option active" data-duration="6">6H</button>
+                <button class="propose-option" data-duration="12">12H</button>
+                <button class="propose-option" data-duration="24">24H</button>
+                <button class="propose-option" data-duration="48">48H</button>
+            </div>
+        </div>
+
+        <div class="propose-field">
+            <label class="propose-label">Entry Fee</label>
+            <div class="propose-option-row">
+                <button class="propose-option active" data-fee="1">1 USDC</button>
+                <button class="propose-option" data-fee="2">2 USDC</button>
+                <button class="propose-option" data-fee="5">5 USDC</button>
+                <button class="propose-option" data-fee="10">10 USDC</button>
+            </div>
+        </div>
+
+        <div class="propose-field">
+            <label class="propose-label">Oracle Source</label>
+            <div class="propose-oracle-display">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                DeepBook Price Oracle · Sui Testnet
+            </div>
+        </div>
+
+        <div class="propose-nav-row">
+            <button class="propose-back-btn" id="proposeBack2">← Back</button>
+            <button class="propose-next-btn" id="proposeNext2">Continue →</button>
+        </div>
+    </div>
+
+    <!-- STEP 3 — Review -->
+    <div class="propose-panel" id="proposeStep3" style="display:none;">
+        <h2 class="propose-panel-title">Review & Submit</h2>
+        <p class="propose-panel-sub">Confirm your proposal before submitting on-chain.</p>
+
+        <div class="propose-review-card">
+            <div class="propose-review-row">
+                <span>Asset Pair</span>
+                <strong id="reviewPair">SUI / USDC</strong>
+            </div>
+            <div class="propose-review-row">
+                <span>Duration</span>
+                <strong id="reviewDuration">24H</strong>
+            </div>
+            <div class="propose-review-row">
+                <span>Entry Fee</span>
+                <strong id="reviewFee">1 USDC</strong>
+            </div>
+            <div class="propose-review-row">
+                <span>Oracle</span>
+                <strong>DeepBook · Sui</strong>
+            </div>
+            <div class="propose-review-row">
+                <span>Network</span>
+                <strong>Sui Testnet</strong>
+            </div>
+        </div>
+
+        <div class="propose-submit-gate" id="proposeGate">
+            <p>Connect your wallet to submit this proposal on-chain.</p>
+            <button class="detail-gate-btn" id="proposeConnectBtn">Connect Wallet →</button>
+        </div>
+
+        <div class="propose-submit-form" id="proposeForm" style="display:none;">
+            <button class="propose-submit-btn" id="proposeSubmitBtn">
+                Submit Proposal on Sui →
+            </button>
+            <p class="propose-disclaimer">This proposal will be submitted to the Slete protocol contract on Sui Testnet.</p>
+        </div>
+
+        <div class="propose-nav-row">
+            <button class="propose-back-btn" id="proposeBack3">← Back</button>
+        </div>
+    </div>
+
+</div><!-- end #page-propose -->
+
+<!-- LEADERBOARD PAGE -->
+<div id="page-leaderboard" style="display:none;">
+
+    <section class="page-header">
+        <div>
+            <h1>Leaderboard</h1>
+            <p>Top predictors by accuracy.</p>
+        </div>
+    </section>
+
+    <!-- Podium — rendered by JS when data exists -->
+    <div class="leaderboard-podium" id="leaderboardPodium" style="display:none;"></div>
+
+    <!-- List — rendered by JS when data exists -->
+    <div class="leaderboard-list" id="leaderboardList" style="display:none;">
+        <div class="leaderboard-list-header">
+            <span>Rank</span>
+            <span>Address</span>
+            <span>Predictions</span>
+            <span>Earned</span>
+        </div>
+        <div id="leaderboardRows"></div>
+    </div>
+
+    <!-- Empty state — shown until real data loads -->
+    <div class="leaderboard-empty" id="leaderboardEmpty">
+        <div class="leaderboard-empty-inner">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="color:var(--text-muted)"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <p class="leaderboard-empty-title">No predictors yet.</p>
+            <p class="leaderboard-empty-sub">Be the first to predict and claim the top spot.</p>
+            <button class="detail-gate-btn" id="lbGoPoolsBtn">Browse Pools</button>
+        </div>
+    </div>
+
+</div><!-- end #page-leaderboard -->
+
+<footer class="slete-footer">
+    Powered by DeepBook Predict · Sui Testnet
+</footer>
+
+    <!-- =====================================
+         MOBILE BOTTOM NAV
+    ====================================== -->
+
+    <nav class="mobile-nav">
+
+        <button class="mobile-nav-item active" data-nav="pools">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            Pools
+        </button>
+
+        <button class="mobile-nav-item" data-nav="labs">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
+            Labs
+        </button>
+
+        <button class="mobile-nav-item" data-nav="leaderboard">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Leaders
+        </button>
+
+        <button class="mobile-nav-item" data-nav="portfolio">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Portfolio
+        </button>
+
+    </nav>
+
+   <!-- =====================================
+         POOL DETAIL PAGE
+    ====================================== -->
+
+    <section class="detail-page" id="page-pool-detail">
+
+        <!-- DETAIL NAVBAR -->
+        <header class="detail-nav">
+            <button class="detail-back" id="detailBack">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="detail-breadcrumb">
+    <span class="detail-bc-pools">Pools</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    <span class="detail-bc-asset" id="detailBcAsset">SUI / USDC</span>
+    <div class="detail-status-badge">Open</div>
+</div>
+<div class="detail-nav-right">
+    <div class="detail-duration-badge" id="detailDuration">24H</div>
+</div>
+
+<div class="detail-nav-right">
+    <div class="detail-duration-badge" id="detailDuration">24H</div>
+    <button class="detail-share-btn" id="detailShareBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+    </button>
+</div>
+
+        </header>
+
+        <!-- PRICE HERO -->
+        <div class="detail-price-hero">
+            <div class="detail-price-left">
+       <div class="detail-asset-icons"></div>
+                <div class="detail-asset-name" id="detailAsset">SUI / USDC</div>
+                <div class="detail-price-row">
+                    <span class="detail-live-price" id="detailLivePrice">$4.284</span>
+                    <span class="detail-change" id="detailChange">+0.12%</span>
+                </div>
+            </div>
+            <div class="detail-pool-id-badge" id="detailPoolId">#942</div>
+        </div>
+
+        <!-- TRADINGVIEW CHART -->
+        <div class="detail-chart-wrap">
+            <div class="tradingview-widget-container" id="tvChartContainer">
+                <div id="tradingview_chart"></div>
+            </div>
+        </div>
+
+        <!-- DUAL TIMERS -->
+        <div class="detail-timers">
+        <div class="detail-timer-card detail-timer-close">
+    <div class="detail-timer-label">Pool Closes In</div>
+    <div class="detail-timer-value" id="detailTimerClose">—</div>
+    <div class="detail-timer-tag">Entry deadline</div>
+</div>
+<div class="detail-timer-card detail-timer-snapshot">
+    <div class="detail-timer-label">Snapshot In</div>
+    <div class="detail-timer-value" id="detailTimerSnapshot">—</div>
+    <div class="detail-timer-tag">Oracle reads price</div>
+</div>
+        </div>
+
+        <!-- POOL METADATA STRIP -->
+        <div class="detail-meta-strip">
+            <div class="detail-meta-item">
+                <span>Pool ID</span>
+                <strong id="detailMetaPool">942</strong>
+            </div>
+            <div class="detail-meta-item">
+                <span>Entry Fee</span>
+                <strong id="detailMetaEntry">1 USDC</strong>
+            </div>
+            <div class="detail-meta-item">
+                <span>Predictors</span>
+                <strong id="detailMetaPredictors">421</strong>
+            </div>
+            <div class="detail-meta-item">
+                <span>Prize Pool</span>
+                <strong id="detailMetaPrize">1,240 USDC</strong>
+            </div>
+        </div>
+
+        <!-- PREDICTION DISTRIBUTION -->
+        <div class="detail-distribution">
+            <div class="detail-dist-header">
+                <span class="detail-dist-title">Prediction Distribution</span>
+                <span class="detail-dist-sub" id="detailDistSub">421 predictions</span>
+                <p class="detail-dist-hint">Tap a bar to set your prediction</p>
+            </div>
+            <div class="detail-dist-bars" id="detailDistBars"></div>
+            <div class="detail-dist-range">
+                <span id="detailDistMin">—</span>
+                <span>Current Price</span>
+                <span id="detailDistMax">—</span>
+            </div>
+            
+            <div class="detail-crowd-indicator" id="detailCrowdIndicator">
+                <span class="crowd-dot"></span>
+                <span class="crowd-text" id="detailCrowdText">—</span>
+            </div>        
+            
+        </div>
+
+        <!-- PREDICT INPUT -->
+<div class="detail-predict-section">
+
+    <!-- GATE — shown when disconnected -->
+    <div class="detail-connect-gate" id="detailConnectGate">
+        <p class="detail-gate-text">Connect your wallet to make a prediction</p>
+        <button class="detail-gate-btn" id="detailGateConnect">Connect Wallet  </button>
+    </div>
+
+    <!-- PREDICT FORM — shown when connected -->
+    <div class="detail-predict-form" id="detailPredictForm">
+        <div class="detail-predict-label">Your Predicted Close Price</div>
+        <div class="detail-input-wrap">
+            <span class="detail-input-prefix">$</span>
+            <input
+                type="number"
+                class="detail-input"
+                id="detailPredictionInput"
+                placeholder="—"
+                step="0.001"
+            />
+            <button class="detail-input-hint" id="detailUseCurrentBtn">Use current</button>
+        </div>
+        <button class="detail-submit-btn" id="detailSubmit">
+            Confirm Prediction 
+        </button>
+        
+        <!-- YOUR POSITION — shown after prediction submitted -->
+<div class="detail-position" id="detailPosition" style="display:none;">
+    <div class="detail-position-header">
+        <span class="detail-position-title">Your Position</span>
+        <span class="detail-position-badge">Active</span>
+    </div>
+    <div class="detail-position-rows">
+        <div class="detail-position-row">
+            <span>Your Prediction</span>
+            <strong id="posYours">—</strong>
+        </div>
+        <div class="detail-position-row">
+            <span>Current Price</span>
+            <strong id="posCurrent">—</strong>
+        </div>
+        <div class="detail-position-row">
+            <span>Crowd Median</span>
+            <strong id="posCrowd">—</strong>
+        </div>
+        <div class="detail-position-row">
+            <span>Your Distance</span>
+            <strong id="posDistance">—</strong>
+        </div>
+    </div>
+</div>
+        
+        <p class="detail-disclaimer">
+            Closest prediction to the oracle close price wins the prize pool.
+        </p>
+    </div>
+
+</div>
+
+    </section>
+
+</div>
+
+<script src="sui-wallet.js"></script>
+<script src="slete.js"></script>
+
+</body>
+</html>
