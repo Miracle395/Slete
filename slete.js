@@ -988,7 +988,7 @@ setInterval(seedPrice, 15_000);
     btn.style.opacity = '0.6';
     btn.style.cursor = 'not-allowed';
 
-    const strikeRaw = Math.round(parseFloat(val) * 1_000_000); // DUSDC = 6 decimals
+    const strikeRaw = Math.round(parseFloat(val) * 1_000_000_000); // oracle prices = 9 decimals
 
     // get oracle ID from the open card
     const oracleMap = {};
