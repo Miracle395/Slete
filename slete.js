@@ -3,6 +3,17 @@
    Application Runtime
 ========================================================== */
 
+// Initialize shared wallet state bridge
+window.STATE = window.STATE || {
+    connected:    false,
+    walletAddr:   null,
+    suiWallet:    null,
+    suiBalance:   0,
+    usdcBalance:  0,
+    dusdcBalance: 0,
+    balance:      0,
+};
+
 const Slete = {
 
     state: {
