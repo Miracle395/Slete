@@ -334,9 +334,11 @@ if (balStatEl) balStatEl.textContent = dusdcBal.toFixed(2) + ' DUSDC';
         const summary = summaryRes.ok ? await summaryRes.json() : null;
         const pnl     = pnlRes.ok     ? await pnlRes.json()     : null;
         
-        console.log('[Slete] Portfolio summary:', summary);
+        console.log('[Slete] Portfolio summary:', JSON.stringify(summary));
+console.log('[Slete] Portfolio pnl:', JSON.stringify(pnl));
 console.log('[Slete] Portfolio pnl:', pnl);
 console.log('[Slete] Manager ID used:', managerId);
+           
 
         // stats
         const totalPreds = summary?.total_positions ?? summary?.count ?? 0;
