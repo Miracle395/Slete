@@ -141,9 +141,6 @@ const Slete = {
 
 applyFilter(tab) {
 
-    const closedGrid = document.getElementById('closed-pools-grid');
-    if (closedGrid) closedGrid.style.display = tab === 'closed' ? '' : 'none';
-
     const cards = document.querySelectorAll('.pool-card');
 
     cards.forEach(card => {
@@ -924,7 +921,7 @@ const fmt = (secs) => {
                                 '<div><span>Entry</span><strong>1 USDC</strong></div>' +
                             '</div>' +
 
-                            '<button class="join-btn">Join ' + assetSymbol + ' Pool</button>' +
+                            '<button class="join-btn">Enter Pool </button>' +
                         '</article>'
                     );
 
@@ -1704,7 +1701,7 @@ setTimeout(() => {
 
     const joinBtn = card.querySelector('.join-btn');
     if (joinBtn && !joinBtn.dataset.labeled) {
-        joinBtn.textContent = `Predict ${baseAsset}  `;
+        joinBtn.textContent = `Enter Pool`;
         joinBtn.dataset.labeled = 'true';
     }
 
@@ -2299,16 +2296,44 @@ iframe.src = `https://s.tradingview.com/widgetembed/?frameElementId=tv_detail&sy
 
         if (!themeToggle) return;
 
+// Default to dark mode
+document.body.classList.add('dark');
+
         themeToggle.addEventListener(
             'click',
-            () => {
+            (e) => {
 
-                document.body.classList.toggle('dark');
-                
+                // Icon spin
+                themeToggle.classList.add('spinning');
+                setTimeout(() => themeToggle.classList.remove('spinning'), 420);
+
+                // Ripple from click point
+                const rect = themeToggle.getBoundingClientRect();
+                const cx = rect.left + rect.width / 2;
+                const cy = rect.top + rect.height / 2;
+                const maxDim = Math.max(window.innerWidth, window.innerHeight) * 2.2;
+                const ripple = document.createElement('div');
+                ripple.className = 'theme-ripple';
+                const isDarkNow = document.body.classList.contains('dark');
+                ripple.style.cssText = `
+                    width: ${maxDim}px;
+                    height: ${maxDim}px;
+                    left: ${cx - maxDim / 2}px;
+                    top: ${cy - maxDim / 2}px;
+                    background: ${isDarkNow ? '#f4f1eb' : '#1c1611'};
+                `;
+                document.body.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 520);
+
+                // Toggle after brief delay so ripple leads
+                setTimeout(() => {
+                    document.body.classList.toggle('dark');
+                }, 80);
+
                 const chartAsset = document.getElementById('detailAsset')?.textContent?.trim();
-if (chartAsset && document.getElementById('page-pool-detail')?.classList.contains('open')) {
-    this.loadTVChart(chartAsset);
-}
+                if (chartAsset && document.getElementById('page-pool-detail')?.classList.contains('open')) {
+                    setTimeout(() => this.loadTVChart(chartAsset), 120);
+                }
 
             }
         );
