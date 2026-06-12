@@ -53,15 +53,15 @@ Pools with fewer than 3 participants trigger a full refund.
 
 ## Features
 
-- Live BTC/USDC price from DeepBook oracle, refreshed every 15 seconds on pool cards
-- Prediction distribution histogram — see where the crowd is clustering before you predict
-- Price Clusters table — ranked breakdown of prediction density by price range
-- Crowd Target banner — the median prediction across all participants
-- Contrarian badge — flags when your prediction diverges significantly from the crowd
-- Accuracy streak tracker in Portfolio
-- Tiered payout with win estimate shown before you confirm
-- Propose Market flow — UI for submitting new pool proposals on-chain
-- Mobile-first, works entirely in-browser with no install
+- Live BTC/USDC price from DeepBook oracle, refreshed every 15 seconds on pool cards.
+- Prediction distribution histogram to see where the crowd is clustering before you predict.
+- Price Clusters table with ranked breakdown of prediction density by price range.
+- Crowd Target banner with the median prediction across all participants
+- Contrarian badge that flags when your prediction diverges significantly from the crowd.
+- Accuracy streak tracker in Portfolio.
+- Tiered payout with win estimate shown before you confirm.
+- Propose Market flow UI for submitting new pool proposals onchain.
+- Mobile first, works entirely in browser with no install.
 
 ---
 
@@ -70,17 +70,17 @@ Pools with fewer than 3 participants trigger a full refund.
 ```bash
 git clone https://github.com/Miracle395/Slete
 cd Slete
-# No build step required — open index.html directly or serve with any static server
-npx serve .
+# No build step required just open index.html directly or serve with any static server
+npx serve 
 ```
 
-Connect a Sui-compatible wallet (e.g. Sui Wallet browser extension) funded with DUSDC on testnet.
+Connect a Sui compatible wallet ( e.g. Slush, Phantom Wallet browser extension ) funded with DUSDC on testnet.
 
 ---
 
 ## Project Status
 
-Slete is live on Sui testnet as part of Overflow 2026. The protocol layer uses DeepBook Predict's existing oracle and position infrastructure — Slete provides the curation layer, UI, and payout logic on top.
+Slete is live on Sui testnet as part of Overflow 2026. The protocol layer uses DeepBook Predict's existing oracle and position infrastructure, while Slete provides the curation layer, UI and payout logic on top.
 
 Mainnet deployment and additional asset pairs are the next milestones.
 
