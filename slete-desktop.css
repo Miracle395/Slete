@@ -1040,7 +1040,7 @@ body.dark .detail-sticky-sheet {
 .detail-sheet-form {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 30px;
 }
 
 /* Row 1 — price input card */
