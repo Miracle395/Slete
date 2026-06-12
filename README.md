@@ -1,8 +1,8 @@
 # Slete
 
-**Precison price prediction markets on Sui, powered by DeepBook oracles.**
+**Precison price prediction markets on Sui, powered by DeepBook.**
 
-[slete.vercel.app](https://slete.vercel.app) · Sui Testnet · Overflow 2026
+[slete.vercel.app](https://slete.vercel.app) · Sui Testnet · Overflow 2026. 
 
 ---
 
@@ -10,17 +10,17 @@
 
 Slete is a prediction market protocol where users stake DUSDC on where a crypto asset's price will close at a set point in time. The predictor closest to the oracle settlement price wins the pool.
 
-It is built on top of DeepBook Predict — Mysten Labs' on-chain price oracle and prediction infrastructure on Sui testnet — and wraps it in a consumer-grade mobile-first interface.
+It is built on top of DeepBook Predict, Mysten Labs' onchain price oracle and prediction infrastructure on Sui testnet and wraps it in a consumer grade mobile first interface.
 
 ---
 
 ## How It Works
 
-1. **Browse pools** — each pool is tied to an asset pair (e.g. BTC/USDC) and a duration (6H, 24H, 10D)
-2. **Make a prediction** — enter the price you think the asset will close at and stake DUSDC
-3. **Oracle settles** — at expiry, DeepBook's price oracle records the final settlement price on-chain
-4. **Payouts distribute** — the three closest predictors split the prize pool on a 60/25/15 tiered model, minus a 5% protocol rake
-5. **Refund rule** — if fewer than 3 predictors join a pool, all stakes are refunded in full
+1. **Browse pools** : each pool is tied to an asset pair (e.g. BTC/USDC) and a duration (6H, 24H, 10D)
+2. **Make a prediction** : enter the price you think the asset will close at and stake DUSDC.
+3. **Oracle settles** : at expiry, DeepBook's price oracle records the final settlement price onchain.
+4. **Payouts distribute** : the three closest predictors split the prize pool on a 60/25/15 tiered model, minus a 5% protocol rake.
+5. **Refund rule** : if fewer than 3 predictors join a pool, all stakes are refunded in full.
 
 ---
 
@@ -43,8 +43,8 @@ Pools with fewer than 3 participants trigger a full refund.
 |-------|-----------|
 | Blockchain | Sui Testnet |
 | Oracle / Prediction infra | DeepBook Predict (`predict-server.testnet.mystenlabs.com`) |
-| Wallet | Sui wallet adapter (dApp Kit) |
-| Frontend | Vanilla JS, HTML/CSS — no framework |
+| Wallet | Sui wallet adapter ( dApp Kit ) |
+| Frontend | Vanilla JS, HTML/CSS, no framework |
 | Deployment | Vercel |
 
 **Predict contract ID:** `0xc8736204d12f0a7277c86388a68bf8a194b0a14c5538ad13f22cbd8e2a38028a`
