@@ -1,0 +1,1049 @@
+/* ============================================================
+   SLETE — LABS OVERRIDE
+   Drop this AFTER slete.css in <head>.
+   Scoped entirely to #page-labs and .labs-bottom-bar
+   ============================================================ */
+
+
+#page-labs {
+  background: #f5f0e8;
+  min-height: 100dvh;
+  padding-bottom: 160px;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* ── MARKET HEADER ── */
+.labs-market-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px 12px;
+  background: #f5f0e8;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.labs-market-icon img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+
+.labs-market-info {
+  flex: 1;
+}
+
+.labs-market-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #0a0a0a;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.labs-market-sub {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+/* ── LIVE TIMER PILL ── */
+.labs-market-timer-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.labs-timer-live-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.labs-timer-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e53935;
+  animation: labsPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes labsPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.labs-timer-live-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #e53935;
+  letter-spacing: 0.8px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.labs-timer-clock {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0a0a0a;
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+/* ── CHART ── */
+.labs-chart-wrap {
+  width: 100%;
+  height: 360px;
+  background: #f5f0e8;
+  border-bottom: 1px solid #f0f0f0;
+  overflow: hidden;
+}
+
+/* ── TIME SCRUBBER ── */
+.labs-scrubber {
+  display: flex;
+  gap: 4px;
+  padding: 10px 16px;
+  background: #f5f0e8;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.labs-scrub-chip {
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1.5px solid #e8e8e8;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  color: #888;
+  cursor: pointer;
+  font-family: 'IBM Plex Mono', monospace;
+  transition: all 0.15s;
+}
+
+.labs-scrub-chip.active {
+  background: #0a0a0a;
+  border-color: #0a0a0a;
+  color: #f5f0e8;
+}
+
+/* ── SENTIMENT BARS ── */
+.labs-sentiment {
+  padding: 14px 16px;
+  background: #f5f0e8;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.labs-sentiment-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.labs-sentiment-row:last-of-type { margin-bottom: 0; }
+
+.labs-sentiment-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0a0a0a;
+}
+
+.labs-sentiment-pct {
+  font-size: 15px;
+  font-weight: 800;
+  color: #0a0a0a;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.labs-sentiment-bar-wrap {
+  height: 6px;
+  background: #f3f3f3;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.labs-sentiment-bar--bull {
+  height: 100%;
+  background: #16a34a;
+  border-radius: 4px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.labs-sentiment-bar--bear {
+  height: 100%;
+  background: #e53935;
+  border-radius: 4px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── PRICE VS ROW ── */
+.labs-price-row--versus {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 16px;
+  background: #f5f0e8;
+  border-bottom: 1px solid #f0f0f0;
+  gap: 0;
+  position: relative;
+}
+
+.labs-versus-side {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.labs-versus-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #aaa;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.labs-price-beat-val {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0a0a0a;
+  letter-spacing: -0.5px;
+}
+
+.labs-price-current-val {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: #16a34a;
+  letter-spacing: -0.5px;
+}
+
+.labs-versus-sub {
+  font-size: 11px;
+  color: #aaa;
+  font-weight: 600;
+}
+
+.labs-versus-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+}
+
+.labs-versus-vs {
+  font-size: 11px;
+  font-weight: 800;
+  color: #ccc;
+  letter-spacing: 1px;
+}
+
+/* progress bar under the row */
+.labs-versus-bar-wrap {
+  grid-column: 1 / -1;
+  height: 3px;
+  background: #f3f3f3;
+  border-radius: 2px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.labs-versus-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+  border-radius: 2px;
+  transition: width 0.6s ease;
+  width: 50%;
+}
+
+/* delta pill */
+.labs-price-delta-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 7px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  font-family: 'IBM Plex Mono', monospace;
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.labs-price-delta-pill.down {
+  background: #fee2e2;
+  color: #e53935;
+}
+
+.labs-trend-val {
+  font-weight: 700;
+  color: #16a34a;
+}
+
+/* ── ORDER BOOK ROW ── */
+.labs-ob-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 16px;
+  background: #f5f0e8;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.labs-ob-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0a0a0a;
+}
+
+.labs-ob-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #888;
+  font-weight: 600;
+}
+
+.labs-ob-chevron {
+  color: #ccc;
+  transition: transform 0.2s;
+}
+
+.labs-ob-row.open .labs-ob-chevron {
+  transform: rotate(180deg);
+}
+
+.labs-ob-body {
+  display: none;
+  background: #fafafa;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.labs-ob-body.open {
+  display: block;
+}
+
+.labs-ob-body-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 14px 16px;
+  gap: 12px;
+}
+
+.labs-ob-side {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.labs-ob-side-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #aaa;
+}
+
+.labs-ob-side--up .labs-ob-side-val {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: #16a34a;
+}
+
+.labs-ob-side--down .labs-ob-side-val {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: #e53935;
+}
+
+/* ── STREAK HERO ── */
+.labs-streak-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px 16px;
+  background: #f5f0e8;
+  border-bottom: 1px solid #f0f0f0;
+  gap: 6px;
+}
+
+.labs-streak-hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.labs-streak-count {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0a0a0a;
+}
+
+.labs-streak-hero-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #555;
+}
+
+.labs-streak-hero-sub {
+  font-size: 12px;
+  color: #aaa;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ── RULES TABS ── */
+.labs-rules-wrap {
+  background: #f5f0e8;
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.labs-rules-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1.5px solid #f0f0f0;
+  margin-bottom: 14px;
+}
+
+.labs-rules-tab {
+  padding: 8px 16px;
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  color: #bbb;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.15s;
+}
+
+.labs-rules-tab.active {
+  color: #0a0a0a;
+}
+
+.labs-rules-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1.5px;
+  left: 0; right: 0;
+  height: 2px;
+  background: #0a0a0a;
+  border-radius: 2px 2px 0 0;
+}
+
+.labs-rules-body,
+.labs-context-body {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.labs-rules-source {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 8px;
+}
+
+/* ── LOCKED PANEL ── */
+.labs-locked-panel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  background: #f9fafb;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.labs-locked-badge {
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.labs-locked-badge.down {
+  background: #fee2e2;
+  color: #e53935;
+}
+
+.labs-locked-meta {
+  flex: 1;
+}
+
+.labs-locked-label {
+  font-size: 11px;
+  color: #aaa;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.labs-locked-timer {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0a0a0a;
+}
+
+.labs-locked-hint {
+  font-size: 11px;
+  color: #bbb;
+  margin-top: 2px;
+}
+
+.labs-locked-streak {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0a0a0a;
+}
+
+/* ── BOTTOM BAR ── */
+.labs-bottom-bar {
+  position: fixed;
+  bottom: 60px; /* sits above mobile nav */
+  left: 0; right: 0;
+  background: #f5f0e8;
+  border-top: 1.5px solid #f0f0f0;
+  padding: 10px 12px 10px;
+  z-index: 200;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.07);
+}
+
+.labs-pick-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.labs-pick-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 0;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  transition: transform 0.12s, opacity 0.12s;
+  position: relative;
+  overflow: hidden;
+}
+
+.labs-pick-btn:active {
+  transform: scale(0.97);
+  opacity: 0.9;
+}
+
+.labs-pick-up {
+  background: #16a34a;
+  color: #fff;
+}
+
+.labs-pick-down {
+  background: #fff;
+  color: #e53935;
+  border: 2px solid #fecaca;
+}
+
+.labs-pick-label {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.labs-pick-odds {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+/* ── STAKE CARDS ── */
+.labs-stake-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.labs-stake-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 6px;
+  border-radius: 8px;
+  border: 1.5px solid #e8e8e8;
+  background: #f5f0e8;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.labs-stake-card.active {
+  border-color: #0a0a0a;
+  background: #0a0a0a;
+}
+
+.labs-stake-card.active .labs-stake-amount {
+  color: #fff;
+}
+
+.labs-stake-card.active .labs-stake-win {
+  color: rgba(255,255,255,0.6);
+}
+
+.labs-stake-amount {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0a0a0a;
+}
+
+.labs-stake-win {
+  font-size: 10px;
+  color: #aaa;
+  font-weight: 600;
+}
+
+.labs-stake-win strong {
+  color: #16a34a;
+}
+
+.labs-stake-card.active .labs-stake-win strong {
+  color: #4ade80;
+}
+
+/* ── GATE SHEET ── */
+.labs-gate-sheet {
+  position: fixed;
+  bottom: 60px;
+  left: 0; right: 0;
+  background: #f5f0e8;
+  border-top: 1.5px solid #f0f0f0;
+  padding: 16px;
+  z-index: 200;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.07);
+}
+
+.labs-gate-sheet-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.labs-gate-sheet-text {
+  font-size: 13px;
+  color: #888;
+  font-weight: 600;
+}
+
+/* ── MOMENTUM BAR (hide — not needed in clean version) ── */
+.labs-momentum-wrap {
+  display: none !important;
+}
+
+body.dark #page-labs {
+  background: #1a1610 !important;
+  color: #f0ebe0;
+}
+
+body.dark .labs-bottom-bar,
+body.dark .labs-gate-sheet {
+  background: #1a1610;
+  border-color: #2e2a22;
+}
+
+body.dark .labs-market-header,
+body.dark .labs-scrubber,
+body.dark .labs-price-row--versus,
+body.dark .labs-ob-row,
+body.dark .labs-ob-body,
+body.dark .labs-streak-hero,
+body.dark .labs-rules-wrap,
+body.dark .labs-locked-panel {
+  background: #221e17 !important;
+  border-color: #2e2a22 !important;
+}
+
+body.dark .labs-sentiment {
+  background: #1a1610 !important;
+  border-color: #2e2a22 !important;
+}
+
+body.dark .labs-market-title,
+body.dark .labs-timer-clock,
+body.dark .labs-price-beat-val,
+body.dark .labs-ob-label,
+body.dark .labs-streak-count,
+body.dark .labs-locked-timer,
+body.dark .labs-rules-tab.active {
+  color: #f0ebe0;
+}
+
+body.dark .labs-market-sub,
+body.dark .labs-versus-label,
+body.dark .labs-versus-sub,
+body.dark .labs-ob-meta,
+body.dark .labs-streak-hero-sub,
+body.dark .labs-rules-body,
+body.dark .labs-context-body,
+body.dark .labs-locked-label,
+body.dark .labs-locked-hint,
+body.dark .labs-gate-sheet-text {
+  color: #8a8070;
+}
+
+body.dark .labs-sentiment-label {
+  color: #f5f0e8;
+}
+
+body.dark .labs-sentiment-pct {
+  color: #2e2a22;
+}
+
+body.dark .labs-sentiment-bar-wrap {
+  background: #2e2a22;
+}
+
+body.dark .labs-versus-vs {
+  color: #4a4438;
+}
+
+body.dark .labs-versus-bar-wrap {
+  background: #2e2a22;
+}
+
+body.dark .labs-rules-tab {
+  color: #4a4438;
+}
+
+body.dark .labs-rules-tabs {
+  border-color: #2e2a22;
+}
+
+body.dark .labs-scrub-chip {
+  border-color: #2e2a22;
+  color: #8a8070;
+  background: transparent;
+}
+
+body.dark .labs-scrub-chip.active {
+  background: #c8a96e;
+  border-color: #c8a96e;
+  color: #1a1610;
+}
+
+body.dark .labs-stake-card {
+  border-color: #2e2a22;
+  background: #221e17;
+}
+
+body.dark .labs-stake-card.active {
+  border-color: #c8a96e;
+  background: #c8a96e;
+}
+
+body.dark .labs-stake-card.active .labs-stake-amount {
+  color: #1a1610;
+}
+
+body.dark .labs-stake-amount {
+  color: #f0ebe0;
+}
+
+body.dark .labs-pick-down {
+  background: #221e17;
+  border-color: #4a2222;
+  color: #e53935;
+}
+
+body.dark .labs-locked-badge {
+  background: #1a2e1a;
+  color: #4ade80;
+}
+
+body.dark .labs-locked-badge.down {
+  background: #2e1a1a;
+  color: #f87171;
+}
+
+/* ── Desktop: gate sheet and bottom bar sit flush at bottom ── */
+@media (min-width: 1025px) {
+    .labs-gate-sheet,
+    .labs-bottom-bar {
+        bottom: 0;
+    }
+}
+
+/* ══════════════════════════════════════════════
+   LABS — SHARE CARD MODAL
+══════════════════════════════════════════════ */
+
+.labs-share-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.labs-share-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.labs-share-modal {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  transform: translateY(16px);
+  transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+.labs-share-overlay.open .labs-share-modal {
+  transform: translateY(0);
+}
+
+/* ── Dismiss ── */
+.labs-share-dismiss {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: #666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: background 0.15s;
+}
+
+.labs-share-dismiss:hover { background: #f5f5f5; }
+
+/* ── Card ── */
+.labs-share-card {
+  width: 100%;
+  background: #0a0a0a;
+  border-radius: 20px;
+  padding: 28px 24px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle grain texture */
+.labs-share-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.35;
+  pointer-events: none;
+  border-radius: 20px;
+}
+
+/* ── Card top row ── */
+.labs-share-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.labs-share-brand {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.labs-share-brand span {
+  color: #c9a96e;
+}
+
+.labs-share-market {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: #555;
+  letter-spacing: 0.5px;
+}
+
+/* ── Direction hero ── */
+.labs-share-direction {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 0 14px;
+  border-top: 1px solid #1e1e1e;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.labs-share-arrow {
+  font-size: 42px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.labs-share-dir-label {
+  font-family: 'Nunito', sans-serif;
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+/* UP = green, DOWN = red */
+.labs-share-direction.up .labs-share-arrow,
+.labs-share-direction.up .labs-share-dir-label {
+  color: #22c55e;
+}
+
+.labs-share-direction.down .labs-share-arrow,
+.labs-share-direction.down .labs-share-dir-label {
+  color: #f87171;
+}
+
+/* ── Price row ── */
+.labs-share-price-row {
+  display: flex;
+  gap: 0;
+}
+
+.labs-share-price-block {
+  flex: 1;
+}
+
+.labs-share-price-block + .labs-share-price-block {
+  border-left: 1px solid #1e1e1e;
+  padding-left: 16px;
+}
+
+.labs-share-price-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.labs-share-price-val {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 17px;
+  font-weight: 700;
+  color: #e5e5e5;
+}
+
+/* ── Footer ── */
+.labs-share-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.labs-share-date {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: #444;
+}
+
+.labs-share-url {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: #c9a96e;
+  font-weight: 600;
+}
+
+/* ── Action buttons ── */
+.labs-share-actions {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.labs-share-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 0;
+  border-radius: 12px;
+  border: none;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.labs-share-btn:active {
+  transform: scale(0.97);
+  opacity: 0.85;
+}
+
+.labs-share-btn--copy {
+  background: #fff;
+  color: #0a0a0a;
+}
+
+.labs-share-btn--x {
+  background: #0a0a0a;
+  color: #fff;
+  border: 1.5px solid #2a2a2a;
+}
+
+/* ── Dark mode ── */
+body.dark .labs-share-dismiss {
+  background: #1e1e1e;
+  color: #aaa;
+}
+
+body.dark .labs-share-dismiss:hover {
+  background: #2a2a2a;
+}
+
+body.dark .labs-share-btn--copy {
+  background: #e5e5e5;
+  color: #0a0a0a;
+}
