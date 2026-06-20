@@ -108,13 +108,7 @@ The rake funds protocol operations. Pools with fewer than 3 participants trigger
 - Claim and refund flows built directly into the portfolio, winners and refund eligible positions show a one tap claim button.
 - Balance display showing live DUSDC holdings, refreshed on portfolio open.
 
-### Leaderboard
-- Global leaderboard ranked by total earned across all predictions.
-- Podium view for top 3 with full ranked list below.
-- Built from onchain manager data rankings reflect real protocol activity.
-
 ---
-
 
 
 ## Running Locally
@@ -122,7 +116,7 @@ The rake funds protocol operations. Pools with fewer than 3 participants trigger
 No build step required. Clone the repo and open `product.html` in a browser, or serve it with any static file server:
 
 ```bash
-npx serve .
+npx serve
 ```
 
 Connect a Sui wallet with Testnet DUSDC to interact with live markets.
@@ -138,5 +132,3 @@ DUSDC is the prediction token on Sui Testnet. You can obtain testnet SUI from th
 ## Overflow 2026
 
 Slete is submitted to the **Special — DeepBook** track of Sui Overflow 2026. It demonstrates a full consumer facing prediction market experience built entirely on DeepBook Predict, from onchain position minting to oracle settlement and payout distribution.
-
-```
