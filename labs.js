@@ -15,7 +15,7 @@
   const PREDICT_SVR  = 'https://predict-server.testnet.mystenlabs.com';
   const CLOCK_OBJ    = '0x6';
   const DUSDC_TYPE   = '0xe95040085976bfd54a1a07225cd46c8a2b4e8e2b6732f140a0fc49850ba73e1a::dusdc::DUSDC';
-  const COINGECKO_BTC = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true';
+  const COINGECKO_BTC = 'https://slete.vercel.app/api/prices?ids=bitcoin&vs_currencies=usd&include_24hr_change=true';
 
   // ── State ──────────────────────────────────────────────────
   const state = {
